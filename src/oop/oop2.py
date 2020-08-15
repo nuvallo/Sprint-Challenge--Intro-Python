@@ -11,7 +11,6 @@ class GroundVehicle():
     def drive(self):
         return f"vroooom"
 
-
 # Subclass Motorcycle from GroundVehicle.
 #
 # Make it so when you instantiate a Motorcycle, it automatically sets the number
