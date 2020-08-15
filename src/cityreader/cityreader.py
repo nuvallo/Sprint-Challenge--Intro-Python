@@ -26,12 +26,19 @@ class City():
 cities = []
 
 def cityreader(cities=[]):
-  # TODO Implement the functionality to read from the 'cities.csv' file
-  # Ensure that the lat and lon valuse are all floats
-  # For each city record, create a new City instance and add it to the
-  # `cities` list
+    # TODO Implement the functionality to read from the 'cities.csv' file
+    # Ensure that the lat and lon valuse are all floats
+    # For each city record, create a new City instance and add it to the
+    # `cities` list
 
-    return cities
+    with open('./cities.csv', 'r') as csvFile:
+        csvReader = csv.reader(csvFile)
+        next(csvReader)
+        for eachLine in csvReader:
+            cities.append(City((eachLine[0]), float(
+                eachLine[3]), float(eachLine[4])))
+
+        return cities
 
 cityreader(cities)
 
@@ -71,10 +78,10 @@ for c in cities:
 # TODO Get latitude and longitude values from the user
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-  # within will hold the cities that fall within the specified region
-  within = []
+    # within will hold the cities that fall within the specified region
+    within = []
 
-  # Go through each city and check to see if it falls within
-  # the specified coordinates.
+    # Go through each city and check to see if it falls within
+    # the specified coordinates.
 
-  return within
+    return within
